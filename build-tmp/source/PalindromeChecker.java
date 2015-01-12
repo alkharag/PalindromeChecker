@@ -32,8 +32,38 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  //your code here
-  return false;
+  String noSpace = new String();
+  //removes spaces 
+  for(int i=0;i<word.length();i++)
+  {
+     if(Character.isLetter(word.charAt(i))){noSpace += word.charAt(i);}
+  }
+  //return sWord.toLowerCase();
+
+  //counts number of letters in the word
+  // int count = 0;
+  // for(int i = 0; i < noSpace.length(); i ++)
+  // {
+  //    if(Character.isLetter(noSpace.charAt(i)) == true)
+  //    {
+  //      count ++;
+  //    }
+  // }
+  //return count;
+  String beginning = new String();
+  String ending = new String();
+  for(int i =0;i < (noSpace.length()+1)/2; i++)
+  {
+    beginning += noSpace.substring(i,i+1);
+    System.out.println(beginning);
+  }
+  for(int i =noSpace.length();i > (noSpace.length())/2; i--)
+  {
+    ending += noSpace.substring(i-1,i);
+    System.out.println(ending);
+  }
+  if(beginning.toLowerCase().equals(ending.toLowerCase())){return true;}
+  else{return false;}
 }
 
   static public void main(String[] passedArgs) {
